@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(-30deg, #99ccff 0%,#7aa0c7 50%,#262626 50%, #7e9cac 100%) ;
+    filter: hue-rotate(120deg);
+    animation: animate 7s linear infinite;
+}
+@keyframes animate {
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    0%{
+        filter: hue-rotate(360deg);
+    }
+    
+}
+button{
+    text-decoration: none;
+}
+.out{
+    position: relative;
+    padding: 50px;
+    width: 360px;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,0.1);
+    border-radius: 6px;
+    box-shadow: 0 5px 35px rgba(0,0,0,0.2);
+}
+.out::after{
+    content: ' ';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 5px;
+    pointer-events: none;
+    background: linear-gradient(to bottom,rgba(255,255,255,0.3) 0%,rgba(255,255,255,0.1) 15%,transparent 50%
+            transparent 85%,rgba(255,255,255,0.3) 100%);
+}
+.out .form{
+    position: relative;
+    width: 100%;
+}
+.out .form h2{
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+.out .form .inputbox{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.out .form .inputbox input{
+    width: 100%;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: transparent;
+    padding: 8px 10px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 300;
+    box-shadow: inset 0 0 25px rgba(0,0,0,0.2));
+    input:focus{
+        outline: none;
+    }
+}
+.out .form .inputbox img{
+    height: 100%;
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    transform: scale(0.7);
+    filter: invert(1);
+}
+.out .form .inputbox input[type="submit"]{
+    background: #fff;
+    color: #000;
+    max-width: 100px;
+    padding: 8px 10px;
+    box-shadow: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: transform 0.3s ease;
+}
+.out .form .inputbox input[type="submit"]::after,.out .form .inputbox input[type="submit"]::before{
+    content: "";    
+    position: absolute;
+    opacity: 0.3;
+    background: #000;
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+.out .form .inputbox input[type="submit"]:hover{
+    transform: translate(-10px,-10px);
+}
+.out .form .inputbox input[type="submit"]:hover::after{
+    transform: translate(6px,6px);
+}
+.out .form .inputbox input[type="submit"]:hover::before{
+    transform: translate(12px,12px);
+}
+.out .form .inputbox input::placeholder{
+    color: #fff;
+}
+.out .form p{
+    color: #fff;
+    font-weight: 300;
+    font-size: 15px;
+    margin-top: 5px;
+}
+.out .form a{
+    color: #fff;
+}
